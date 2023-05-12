@@ -5,15 +5,17 @@ from utils.recipes.factory import make_recipe
 
 # Create your views here.
 def home(request):
-        return render(request, 'recipes/pages/home.html', context={
-        'recipes': [make_recipe() for _ in rangue(10)],
-})
+    return render(request, 'recipes/pages/home.html', context={
+          'recipes': [make_recipe() for _ in range(10)],
+});
 
 
 
 def recipe(request, id):
-        return render(request, 'recipes/pages/home.html', context={
-        'recipe': make_recipe(),
-    })
+  return render(request, 'recipes/pages/home.html', context={
+   'recipe': make_recipe(),
+    'is_detail_page': True,
+          
+});
 
 
